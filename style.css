@@ -1,0 +1,612 @@
+*,
+*::after,
+*::before {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+	font-family: "Fredoka";
+}
+
+.wrapper {
+	height: 100vh;
+	margin: 0;
+	padding: 1rem;
+}
+
+.container {
+	background-color: #ffffff;
+	border-radius: 1rem;
+	width: 100%;
+	height: 100%;
+	padding: 1rem;
+	box-shadow: 10px 10px 600px 1px #528a2f;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 0 1rem;
+	position: relative;
+}
+
+.landingPage {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	display: none;
+	justify-content: center;
+	align-items: center;
+	padding: 2rem 0;
+}
+
+.landingImage {
+	display: block;
+	border-radius: 2rem;
+	height: 100%;
+}
+
+.landingLogo {
+	height: 48px;
+	aspect-ratio: 1;
+}
+
+.logoBg {
+	background-color: rgb(230, 222, 222);
+	padding: 1rem;
+	border-radius: 50%;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	z-index: 10;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.landingLogoScaleUp {
+	animation: landingLogoScaleUp 2s;
+}
+
+.landingImageScaleUp {
+	animation: landingImageScaleUp 2s;
+}
+
+.dropTobottomAnimation {
+	animation: dropToBottom 1s;
+}
+
+/* Right Section */
+
+.rightSection {
+	width: 100%;
+	display: flex;
+	justify-content: end;
+	align-items: center;
+}
+
+.rightImage {
+	width: 95%;
+	border-radius: 1rem;
+}
+
+.rightImageAnimate {
+	animation: rightImage 1s;
+}
+
+/* Left Section */
+
+.leftSection {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	padding: 1rem;
+}
+
+/* Section Header */
+
+.header {
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+/* Brand */
+.brand {
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+	cursor: pointer;
+}
+
+.logo {
+	position: absolute;
+	margin-top: 2rem;
+	margin-left: 2rem;
+	top: 0%;
+	left: 0%;
+	transform: scale(1) rotate(0deg);
+	z-index: 10;
+}
+
+.logoMoveRotateAndScale {
+	animation: logoMoveRotateAndScale 2s ease-in-out forwards;
+}
+
+.brandName {
+	font-size: 2rem;
+	font-weight: 600;
+	letter-spacing: 0.05rem;
+	color: #528a2f;
+	margin-left: 48px;
+}
+
+/* Enroll Now */
+
+.enrollNow {
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+}
+
+.newCustomer {
+	font-size: 0.9rem;
+	font-weight: 500;
+	color: #528a2f;
+	opacity: 0.75;
+}
+
+.enrollNowButton {
+	all: unset;
+	background-color: #528a2f;
+	color: #ffffff;
+	font-weight: 600;
+	letter-spacing: 0.1rem;
+	width: fit-content;
+	padding: 0.75rem 1.5rem;
+	border-radius: 4rem;
+	cursor: pointer;
+	transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.enrollNowButton:hover {
+	transform: translateY(-2px);
+}
+
+.button-dropdown {
+	position: relative;
+}
+
+.hoverDropdown {
+	position: absolute;
+	list-style-type: none;
+	background: rgba(0, 0, 0, 0.9);
+	color: #528a2f;
+	visibility: hidden;
+	opacity: 0;
+	display: flex;
+	flex-direction: column;
+	align-items: start;
+	gap: 8px;
+	padding: 0.7rem;
+	width: 340px;
+	border-radius: 0.75rem;
+	top: 100%;
+	right: 20%;
+	margin: 20px 0 0 0;
+	transition: all 0.3s ease-in-out;
+}
+
+.dropdown-triangle {
+	visibility: hidden;
+	opacity: 0;
+	position: absolute;
+	top: 100%;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 0;
+	height: 0;
+	border-bottom: 20px solid rgba(0, 0, 0, 0.9);
+	border-left: 15px solid transparent;
+	border-right: 15px solid transparent;
+	transition: all 0.3s ease-in-out;
+}
+
+.enrollNowButton:hover ~ .hoverDropdown,
+.enrollNowButton:hover ~ .dropdown-triangle {
+	visibility: visible;
+	opacity: 1;
+}
+
+.list-item {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	transition: transform 0.2s ease;
+}
+
+.list-item:hover {
+	transform: translateX(5px);
+}
+
+.tick {
+	padding: 0.25rem;
+	background-color: #528a2f;
+	border-radius: 50%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 1.5rem;
+	height: 1.5rem;
+}
+
+.list-tick {
+	width: 1rem;
+	height: 1rem;
+}
+
+/* login Form  */
+
+.login {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	min-height: 400px;
+	width: 500px;
+}
+
+/* Login form header */
+
+.loginHeader {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	color: #528a2f;
+}
+
+.loginHeading {
+	font-size: 3rem;
+	font-weight: 600;
+	letter-spacing: 0.125rem;
+}
+
+/* Form Fields */
+.loginForm {
+	margin-top: 2rem;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 0.5rem 0;
+	width: 100%;
+}
+
+.field {
+	width: 100%;
+	padding: 0 1rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	position: relative;
+	border: #528a2f 1px solid;
+	border-radius: 0.25rem;
+	height: 64px;
+}
+
+.field input {
+	width: 100%;
+	border: none;
+	outline: none;
+	font-size: 1rem;
+	color: #528a2f;
+	margin: 0.5rem 0;
+	font-weight: 700;
+}
+
+.field label {
+	color: #528a2f;
+	position: absolute;
+	display: none;
+	padding-top: 0.5rem;
+	transform: translateY(-50%);
+	transition: all 0.3s ease; /* Smooth transition for position and scale changes */
+}
+
+.fieldAnimate {
+	animation: field 500ms forwards ease-in-out; /* Smooth easing function for animation */
+}
+
+.labelPosition {
+	top: 0.5rem;
+	left: 1rem;
+	transform: translateY(-50%) scale(0.95);
+}
+
+@keyframes field {
+	0% {
+		top: 1rem;
+		left: 1rem;
+		transform: translateY(-50%) scale(1); /* Slightly enlarged at the start */
+	}
+	100% {
+		top: 0.5rem;
+		left: 1rem;
+		transform: translateY(-50%) scale(0.95); /* Smoothly return to normal size and position */
+	}
+}
+
+.field input:focus {
+	border: none;
+	outline: none;
+}
+
+.field input::placeholder {
+	color: #528a2f72;
+	transition: all 0.3s ease; /* Smooth placeholder transition */
+	font-weight: 400;
+}
+
+/* Sign In button */
+
+.button {
+	all: unset;
+	background-color: #528a2f;
+	width: 100%;
+	height: 1.75rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: #ffffff;
+	font-size: 1.25rem;
+	font-weight: 500;
+	border-radius: 4rem;
+	padding: 0.5rem 0;
+	cursor: pointer;
+	opacity: 1;
+}
+
+.buttonFadeAway {
+	animation: buttonFadeAway 1s ease-in-out;
+}
+
+.buttonContent {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+}
+
+.buttonContentSlide {
+	animation: buttonTextSlideOut 1s ease-in-out;
+}
+.buttonContentSlideReverse {
+	animation: buttonTextSlideOutReverse 1s ease-in-out;
+}
+
+.buttonText {
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+.spinner-position {
+	position: absolute;
+	right: 100%;
+	transform: translateX(-50%);
+}
+.spinner {
+	width: 1.25rem;
+	height: 1.25rem;
+	border-radius: 50%;
+	border: 2px solid;
+	border-color: #ffffff43;
+	border-right-color: #fff;
+	animation: spinner-d3wgkg 1s infinite linear;
+}
+
+/* Remember Me check box */
+
+.remember-me {
+	margin: 0.5rem 0;
+	align-self: start;
+	color: #528a2f;
+}
+
+.remember-me input[type="checkbox"] {
+	display: none;
+}
+
+.remember-me label {
+	position: relative;
+	padding-left: 36px;
+	cursor: pointer;
+	font-size: large;
+}
+
+.remember-me label:before {
+	content: "";
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 24px;
+	height: 24px;
+	border: 1px solid #528a2f;
+	border-radius: 0.25rem;
+	background-color: #fff;
+}
+
+.remember-me label:after {
+	content: "\2713";
+	position: absolute;
+	top: 1px;
+	left: 6px;
+	font-size: 16px;
+	color: #528a2f;
+	visibility: hidden;
+	font-weight: 900;
+}
+
+.remember-me input[type="checkbox"]:checked + label:after {
+	visibility: visible;
+}
+
+/* Forgot Id or Password  */
+
+.forget {
+	width: 60%;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin-top: 1rem;
+	font-weight: 500;
+	color: #528a2f;
+}
+
+.forget div {
+	cursor: pointer;
+}
+
+.footer {
+	text-align: center;
+	font-size: 12px;
+	color: #528a2f;
+}
+
+@keyframes rightImage {
+	100% {
+		transform: scale(0);
+	}
+}
+
+@keyframes logoRotateToCenter {
+	0% {
+		top: 2rem;
+		left: 2rem;
+		transform: rotate(0deg);
+	}
+	100% {
+		top: 50%;
+		left: 50%;
+		margin-top: 0;
+		transform: rotate(360deg);
+	}
+}
+
+@keyframes spinner-d3wgkg {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+@keyframes buttonTextSlideOut {
+	0% {
+		transform: translateX(0%);
+	}
+	100% {
+		transform: translateX(50%);
+	}
+}
+@keyframes buttonTextSlideOutReverse {
+	0% {
+		transform: translateX(50%);
+	}
+	100% {
+		transform: translateX(0%);
+	}
+}
+
+@keyframes dropToBottom {
+	100% {
+		transform: translateY(100%);
+		opacity: 0;
+		visibility: hidden;
+	}
+}
+
+@keyframes buttonFadeAway {
+	0% {
+		opacity: 1;
+		transform: translateY(0);
+	}
+	100% {
+		opacity: 0;
+		transform: translateY(2rem);
+	}
+}
+
+@keyframes logoMoveRotateAndScale {
+	0% {
+		top: 0%;
+		left: 0%;
+		margin-top: 2rem;
+		margin-left: 2rem;
+		transform: scale(1) rotate(0deg);
+	}
+	50% {
+		top: 50%;
+		left: 50%;
+		margin-top: -2rem;
+		margin-left: -2rem;
+		transform: scale(1) rotate(360deg);
+	}
+	100% {
+		top: 50%;
+		left: 50%;
+		margin-top: -2rem;
+		margin-left: -2rem;
+		transform: scale(0) rotate(360deg);
+	}
+}
+
+@keyframes landingImageScaleUp {
+	0% {
+		transform: scale(0);
+	}
+	100% {
+		transform: scale(1);
+	}
+}
+
+@keyframes landingImageScaleDown {
+	0% {
+		transform: scale(1);
+	}
+	100% {
+		transform: scale(0);
+	}
+}
+@keyframes landingLogoScaleUp {
+	0% {
+		top: 50%;
+		left: 50%;
+		transform: scale(0) translate(-50%, -50%);
+	}
+	100% {
+		top: 50%;
+		left: 50%;
+		transform: scale(1) translate(-50%, -50%);
+	}
+}
+
+@keyframes landingLogoScaleDown {
+	0% {
+		top: 50%;
+		left: 50%;
+		transform: scale(1) translate(-50%, -50%);
+	}
+	100% {
+		top: 50%;
+		left: 50%;
+		transform: scale(0) translate(-100%, -100%);
+	}
+}
